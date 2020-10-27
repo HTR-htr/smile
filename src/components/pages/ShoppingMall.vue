@@ -83,9 +83,8 @@ import axios from "axios";
 import "swiper/swiper-bundle.css";
 import floorComponent from "../component/floorComponent";
 import goodsInfo from "../component/goodsInfoComponent";
-// import { moneyFliter } from "../../filter/moneyFilter";
 import { moneyFilter } from "../../filter/moneyFilter";
-console.log(moneyFilter);
+const url = require("../../serviceAPI.config");
 import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
 export default {
   data() {
@@ -119,8 +118,7 @@ export default {
   },
   created() {
     axios({
-      url:
-        "https://www.easy-mock.com/mock/5f9033c6e4d147581af73ee4/mock/indexjson",
+      url: url.getShoppingMallInfo,
       methods: "get",
     })
       .then((res) => {
